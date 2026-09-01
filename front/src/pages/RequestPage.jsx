@@ -58,14 +58,17 @@ export default function RequestPage() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center p-6">
-      <Card className="w-full max-w-sm border-portal-blue/30 shadow-[0_0_40px_-10px_rgba(34,211,238,0.3)]">
-        <CardContent data-testid="request-info" className="flex flex-col items-center gap-4 pt-6 text-center">
+      <Card className="w-full max-w-sm animate-in fade-in zoom-in-95 border-portal-blue/30 bg-card/80 shadow-[0_0_60px_-12px_rgba(34,211,238,0.4)] backdrop-blur-xl duration-500">
+        <CardContent data-testid="request-info" className="flex flex-col items-center gap-4 pt-8 text-center">
           {CenterIcon && (
-            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-portal-blue/15 text-portal-blue">
-              <CenterIcon className="h-7 w-7" />
+            <span className="relative flex h-16 w-16 items-center justify-center">
+              <span className="absolute inset-0 rounded-full bg-portal-blue/30 blur-lg" />
+              <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-portal-blue/15 text-portal-blue ring-1 ring-portal-blue/40">
+                <CenterIcon className="h-7 w-7" />
+              </span>
             </span>
           )}
-          <div className="text-4xl font-extrabold text-primary">{phone}</div>
+          <div className="text-5xl font-extrabold tracking-tight text-primary">{phone}</div>
           <div className="text-lg font-bold">
             {phone} {center?.name}
           </div>
@@ -76,7 +79,7 @@ export default function RequestPage() {
             variant="outline"
             disabled={locked}
             onClick={openModal}
-            className="mt-2 w-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground disabled:border-muted-foreground disabled:text-muted-foreground"
+            className="mt-2 w-full border-2 border-primary text-primary transition-colors hover:bg-primary hover:text-primary-foreground disabled:border-muted-foreground disabled:text-muted-foreground"
           >
             ביטול
           </Button>

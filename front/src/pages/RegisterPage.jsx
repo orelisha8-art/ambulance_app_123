@@ -26,15 +26,18 @@ export default function RegisterPage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center p-6">
-      <Card className="w-full max-w-sm border-portal-purple/30 shadow-[0_0_40px_-10px_rgba(157,107,255,0.35)]">
+      <Card className="w-full max-w-sm animate-in fade-in slide-in-from-bottom-4 border-portal-purple/30 bg-card/80 shadow-[0_0_60px_-12px_rgba(157,107,255,0.45)] backdrop-blur-xl duration-500">
         <CardHeader className="items-center text-center">
-          <div className="mb-1 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-portal-green to-portal-blue text-neutral-900">
-            <Siren className="h-6 w-6" />
+          <div className="relative mb-2 flex h-16 w-16 items-center justify-center">
+            <span className="absolute inset-0 animate-pulse rounded-full bg-gradient-to-br from-portal-green to-portal-blue opacity-40 blur-lg" />
+            <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-portal-green to-portal-blue text-neutral-900 shadow-[0_4px_20px_-4px_rgba(164,226,76,0.6)]">
+              <Siren className="h-7 w-7" />
+            </div>
           </div>
-          <CardTitle className="bg-gradient-to-l from-portal-green via-portal-blue to-portal-purple bg-clip-text text-transparent">
+          <CardTitle className="bg-gradient-to-l from-portal-green via-portal-blue to-portal-purple bg-clip-text text-3xl tracking-tight text-transparent">
             helpMe!
           </CardTitle>
-          <CardDescription>הרשמה חד-פעמית כדי להתחיל</CardDescription>
+          <CardDescription className="text-sm">הרשמה חד-פעמית כדי להתחיל</CardDescription>
         </CardHeader>
 
         <CardContent className="flex flex-col gap-5">
@@ -50,6 +53,7 @@ export default function RegisterPage() {
               onChange={(e) => setName(e.target.value)}
               onBlur={() => setNameTouched(true)}
               autoComplete="off"
+              className="bg-background/70 transition-shadow focus-visible:shadow-[0_0_0_4px_rgba(164,226,76,0.15)]"
             />
           </div>
 
@@ -65,8 +69,13 @@ export default function RegisterPage() {
               onChange={(e) => setPassword(e.target.value)}
               onBlur={() => setPasswordTouched(true)}
               autoComplete="off"
+              className="bg-background/70 transition-shadow focus-visible:shadow-[0_0_0_4px_rgba(34,211,238,0.15)]"
             />
           </div>
+
+          <p className="pt-1 text-center text-xs text-muted-foreground">
+            העזרה שלך במרחק כפתור אחד
+          </p>
         </CardContent>
       </Card>
     </div>

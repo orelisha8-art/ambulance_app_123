@@ -52,13 +52,13 @@ export default function AiAssistant() {
       </button>
 
       {open && (
-        <div className="fixed bottom-24 left-6 z-30 flex max-h-[60vh] w-[min(320px,calc(100vw-3rem))] flex-col overflow-hidden rounded-xl border border-portal-purple/30 bg-card shadow-2xl">
+        <div className="fixed bottom-24 left-6 z-30 flex max-h-[60vh] w-[min(320px,calc(100vw-3rem))] animate-in fade-in slide-in-from-bottom-4 flex-col overflow-hidden rounded-xl border border-portal-purple/30 bg-card/95 shadow-[0_20px_60px_-10px_rgba(157,107,255,0.4)] backdrop-blur-xl duration-300">
           <div className="flex items-center justify-between border-b-2 border-portal-green/50 bg-neutral-900 px-4 py-3 font-bold text-white">
             <span className="flex items-center gap-2">
               <Bot className="h-4 w-4 text-portal-green" />
               עוזר AI
             </span>
-            <button onClick={() => setOpen(false)}>
+            <button onClick={() => setOpen(false)} className="transition-colors hover:text-portal-green">
               <X className="h-4 w-4" />
             </button>
           </div>
@@ -67,7 +67,7 @@ export default function AiAssistant() {
               <div
                 key={i}
                 className={cn(
-                  "max-w-[85%] whitespace-pre-wrap rounded-lg border px-3 py-2 text-sm",
+                  "max-w-[85%] animate-in fade-in whitespace-pre-wrap rounded-lg border px-3 py-2 text-sm",
                   m.role === "user"
                     ? "self-end border-portal-blue/40 bg-portal-blue/15 text-foreground"
                     : "self-start border-portal-green/30 bg-portal-green/10 text-foreground"
@@ -77,8 +77,10 @@ export default function AiAssistant() {
               </div>
             ))}
             {loading && (
-              <div className="max-w-[85%] self-start rounded-lg border border-portal-green/30 bg-portal-green/10 px-3 py-2 text-sm text-foreground">
-                כותב...
+              <div className="flex max-w-[85%] animate-in fade-in items-center gap-1 self-start rounded-lg border border-portal-green/30 bg-portal-green/10 px-3 py-2.5 text-sm text-foreground">
+                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-portal-green [animation-delay:0ms]" />
+                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-portal-green [animation-delay:150ms]" />
+                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-portal-green [animation-delay:300ms]" />
               </div>
             )}
           </div>

@@ -43,12 +43,12 @@ export default function MainPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <div className="flex items-center justify-between border-b border-portal-purple/20 bg-card/60 p-4 backdrop-blur">
+      <div className="sticky top-0 z-10 flex items-center justify-between border-b border-portal-purple/20 bg-card/70 p-4 shadow-[0_4px_30px_-10px_rgba(157,107,255,0.35)] backdrop-blur-xl">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
               data-testid="menu-trigger"
-              className="gap-2 border border-portal-green/40 bg-neutral-900 text-white shadow-[0_0_16px_-4px_rgba(164,226,76,0.6)] hover:bg-neutral-800"
+              className="gap-2 border border-portal-green/40 bg-neutral-900 text-white shadow-[0_0_16px_-4px_rgba(164,226,76,0.6)] transition-shadow hover:bg-neutral-800 hover:shadow-[0_0_22px_-2px_rgba(164,226,76,0.75)]"
             >
               <Menu className="h-4 w-4" />
               תפריט
@@ -74,7 +74,7 @@ export default function MainPage() {
         <div className="flex items-center gap-2">
           <div
             data-testid="center-indicator"
-            className="flex items-center gap-2 rounded-full border border-portal-blue/30 bg-background px-3 py-1.5 shadow-sm"
+            className="flex items-center gap-2 rounded-full border border-portal-blue/30 bg-background/80 px-3 py-1.5 shadow-[0_0_16px_-6px_rgba(34,211,238,0.8)] transition-shadow"
           >
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-portal-blue/15 text-portal-blue">
               <CenterIcon className="h-4 w-4" />
@@ -87,29 +87,33 @@ export default function MainPage() {
             onClick={handleLogout}
             aria-label="התנתקות"
             title="התנתקות"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-portal-purple/30 bg-background text-muted-foreground transition-colors hover:text-portal-purple"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-portal-purple/30 bg-background/80 text-muted-foreground transition-colors hover:border-portal-purple hover:text-portal-purple"
           >
             <LogOut className="h-4 w-4" />
           </button>
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col items-center justify-center gap-6 p-6">
+      <div className="flex flex-1 flex-col items-center justify-center gap-8 p-6">
         <div className="relative flex items-center justify-center">
-          <span className="absolute h-64 w-64 animate-[spin_8s_linear_infinite] rounded-full bg-[conic-gradient(from_0deg,#A4E24C,#22D3EE,#9D6BFF,#F5D80E,#A4E24C)] opacity-30 blur-2xl" />
-          <span className="absolute h-56 w-56 animate-ping rounded-full bg-primary/20" />
+          <span className="absolute h-72 w-72 animate-[spin_10s_linear_infinite] rounded-full bg-[conic-gradient(from_0deg,#A4E24C,#22D3EE,#9D6BFF,#F5D80E,#A4E24C)] opacity-25 blur-3xl" />
+          <span className="absolute h-64 w-64 animate-ping rounded-full bg-primary/15 [animation-duration:2.5s]" />
+          <span className="absolute h-56 w-56 animate-ping rounded-full bg-primary/20 [animation-delay:0.6s] [animation-duration:2.5s]" />
           <button
             data-testid="help-button"
             onClick={handleHelp}
-            className="relative h-56 w-56 rounded-full bg-primary text-3xl font-extrabold text-primary-foreground shadow-[0_8px_30px_rgba(211,28,28,0.4)] transition-transform active:scale-95"
+            className="relative h-56 w-56 rounded-full bg-primary text-3xl font-extrabold tracking-wide text-primary-foreground shadow-[0_8px_40px_-4px_rgba(211,28,28,0.55)] ring-4 ring-primary/25 transition-all hover:scale-[1.03] hover:shadow-[0_8px_50px_-2px_rgba(211,28,28,0.7)] active:scale-95"
           >
             הצילו
           </button>
         </div>
       </div>
 
-      <div className="bg-gradient-to-l from-portal-green via-portal-blue to-portal-purple bg-clip-text p-5 text-center text-xl font-extrabold text-transparent">
-        helpMe!
+      <div className="flex flex-col items-center gap-1 border-t border-portal-purple/10 p-5">
+        <div className="bg-gradient-to-l from-portal-green via-portal-blue to-portal-purple bg-clip-text text-xl font-extrabold text-transparent">
+          helpMe!
+        </div>
+        <div className="text-xs text-muted-foreground">העזרה כבר בדרך</div>
       </div>
     </div>
   );
