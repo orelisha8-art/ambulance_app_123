@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255 40% 8%;
+    --foreground: 0 0% 96%;
+    --card: 255 30% 13%;
+    --card-foreground: 0 0% 96%;
+    --popover: 255 30% 13%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 0 72% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 255 20% 20%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 255 20% 18%;
+    --muted-foreground: 220 10% 70%;
+    --accent: 84 45% 16%;
+    --accent-foreground: 84 70% 68%;
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 255 22% 24%;
+    --input: 255 22% 22%;
+    --ring: 84 68% 55%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-image:
+      radial-gradient(600px circle at 10% 0%, rgba(164, 226, 76, 0.16), transparent 60%),
+      radial-gradient(500px circle at 100% 20%, rgba(34, 211, 238, 0.14), transparent 55%),
+      radial-gradient(700px circle at 90% 100%, rgba(157, 107, 255, 0.18), transparent 60%),
+      radial-gradient(400px circle at 0% 90%, rgba(245, 216, 14, 0.08), transparent 55%);
+    background-attachment: fixed;
+  }
+}

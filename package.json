@@ -1,0 +1,9 @@
+{
+  "name": "ambulance-app",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "ai": "^5.0.0",
+    "mongoose": "^8.5.0"
+  }
+}
